@@ -1,23 +1,24 @@
-
-#' XLibrary
-#'
-#' Receives a list of packages to Install/Load
-#' Adds the received packages to a list of default packages to allways load
-#' Installs missing packages
-#' Load Packages
-#' Inspect Packages for datasets
-#' Creates 3 data frames on Global Environment:
-#' Loaded.Packages
-#' Loaded.Datasets
+#' @title Automatically install/load Packages
+#' 
+#' @description 
+#' Receives a list of packages to Install/Load \cr
+#' Adds the received packages to a list of default packages to allways load \cr
+#' Installs missing packages \cr
+#' Load Packages \cr
+#' Inspect Packages for datasets \cr
+#' Creates 3 data frames on Global Environment: \cr
+#' Loaded.Packages \cr
+#' Loaded.Datasets \cr
 #' Loaded.Vignettes
 #' @param package 0, 1 or more comma separated packages
 #' @keywords XLibrary
 #' @export
 #' @examples
+#' XLibrary()
+#' XLibrary("benchmarkme")
+#' XLibrary("package1","package2")
 
 
-
-# Automatically install/load Packages
 XLibrary = function(...) {
   cat("\nXLibrary: Automatically Install/Load Packages \n")
   

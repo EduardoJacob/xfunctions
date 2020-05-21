@@ -1,7 +1,14 @@
-
+#' @title BarPlot for one categorical variable (A table) 
+#' 
+#' @description 
+#' BarPlot
+#' @param data1 a factor vector
+#' @keywords  
 #' @export
+#' @examples
+#' XBarPlot(as.factor(mtcars$cyl))
 
-# BarPlot for one categorical variable (A table) 
+ 
 XBarPlot = function(data1) {
   # library("ggplot2")
   # library("scales")
@@ -13,7 +20,7 @@ XBarPlot = function(data1) {
   if (is.factor(data1)) {
     t1 = table(data1)
     t2 = prop.table(t1)
-    t2 = percent(as.vector(t2))
+    t2 = scales::percent(as.vector(t2))
     labels = paste(t1,t2,sep=" , ")
     print(labels)
     
@@ -36,6 +43,10 @@ XBarPlot = function(data1) {
   
   
 } # XBarPlot
+
+# View(mtcars$cyl)
+# table(mtcars$cyl)
+# XBarPlot(as.factor(mtcars$cyl))
 
 
 
