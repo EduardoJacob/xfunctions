@@ -1,10 +1,15 @@
-
+#' The (non-central) Chi-Squared Distribution
+#' 
+#' The mean on ChiSquare is = Degrees Of Freedom
+#' SD is sqrt(2*DF)
+#'
+#' @param df 
+#' @param ConfidenceLevel 
+#'
+#' @return
 #' @export
-
-# The (non-central) Chi-Squared Distribution
-# The mean on ChiSquare is = Degrees Of Freedom
-# SD is sqrt(2*DF)
-
+#'
+#' @examples
 XChiSquare = function(df=2,ConfidenceLevel=0.95) {
   mean = df
   variance = 2*df
@@ -24,6 +29,6 @@ XChiSquare = function(df=2,ConfidenceLevel=0.95) {
   legend("topright",legend=ConfidenceLevel,title="Confidence Levels",lty=1,col=c(1:L)+1)
 }
 
-#XChiSquare(5,0.98)
-#XChiSquare(5,c(0.90,0.95,0.99))
+# XChiSquare(5,0.98)
+# XChiSquare(5,c(0.90,0.95,0.99))
 

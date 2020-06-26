@@ -1,7 +1,10 @@
-
+#' Enhanced Session Information
+#'
+#' @return
 #' @export
-
-# Show Info
+#'
+#' @examples
+#' XShowInfo()
 XShowInfo = function() {
   # library("benchmarkme")
   
@@ -25,5 +28,6 @@ XShowInfo = function() {
     cat("RStudio . . . . . : Not Available, when interactive() = FALSE\n")
   }
   
+  invisible()
 } # XShowInfo
 

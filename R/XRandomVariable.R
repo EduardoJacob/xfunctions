@@ -1,28 +1,34 @@
-
+#' Discrete Random Variable
+#' Generic Distribution of n trials with replacement from a box
+#' The Analytical Expression that gives the probability of X is the Density Function
+#' The Integral of the Density Function is the CDF
+#'
+#' PMF (Probability Mass Function) uses discrete random variables. 
+#' PDF (Probability Density Function) uses continuous random variables. 
+#' Based on studies, PDF is the derivative of CDF, which is the cumulative distribution function. 
+#' CDF is used to determine the probability wherein a continuous random variable would occur within any measurable subset of a certain range
+#'
+#' Sums and Differences of Random Variables: Effect on the Mean
+#' E(X + Y) = E(X) + E(Y) 
+#'
+#' E(X - Y) = E(X) - E(Y) 
+#' Sums and Differences of Independent Random Variables: Effect on Variance
+#' Var(X + Y) = Var(X - Y) = Var(X) + Var(Y) 
+#'
+#' @param X Random Variable Vector
+#' @param n Number of Trials
+#' @param p Probability Vector ( optional )
+#'
+#' @return
 #' @export
-
-# Discrete Random Variable
-# Generic Distribution of n trials with replacement from a box
-# The Analitycal Expression that gives the probability of X is the Density Function
-# The Integral of the Density Function is the CDF
-
-# PMF (Probability Mass Function) uses discrete random variables. 
-# PDF (Probability Density Function) uses continuous random variables. 
-# Based on studies, PDF is the derivative of CDF, which is the cumulative distribution function. 
-# CDF is used to determine the probability wherein a continuous random variable would occur within any measurable subset of a certain range
-
-# Sums and Differences of Random Variables: Effect on the Mean
-# E(X + Y) = E(X) + E(Y) 
-
-# E(X - Y) = E(X) - E(Y) 
-# Sums and Differences of Independent Random Variables: Effect on Variance
-# Var(X + Y) = Var(X - Y) = Var(X) + Var(Y) 
-
-# Receives Random Variable Vector, Probability Vector and Number of Trials
-XRandomVariable = function(X,p=rep(1/L,L),n=1) {
+#'
+#' @examples XRandomVariable(1:6,n=1)
+XRandomVariable = function(X,n=1,p) {
   # library("gtools") # Contains permutations function
   
   L = length(X)
+  if ( missing(p) )p = rep(1/L,L)
+  
   color = "orange"
   E = sum(p*X)
   var = sum(p*(X-E)^2)

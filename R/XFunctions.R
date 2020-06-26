@@ -1,7 +1,13 @@
-
+#' Receive Package List, returns Function names
+#' 
+#' Loads a Data Frame in the Global Environment named: Loaded.Functions
+#'
+#' @param ... 1 or more Packages comma separated or in vector format
+#' 
+#' @return
 #' @export
-
-# Receive Package List, returns Function names
+#'
+#' @examples
 XFunctions = function(...) { 
   packages = unlist(list(...),use.names=FALSE)
   packages = sort(unique(packages))

@@ -7,12 +7,14 @@
 XBarPlot(data1)
 }
 \arguments{
-\item{data1}{a factor vector}
+\item{data1}{A Numeric Factor}
+}
+\value{
+
 }
 \description{
-BarPlot
+BarPlot for one categorical variable (A table)
 }
 \examples{
 XBarPlot(as.factor(mtcars$cyl))
 }
-\keyword{}

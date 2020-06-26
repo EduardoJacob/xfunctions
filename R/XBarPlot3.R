@@ -1,7 +1,13 @@
-
+#' BarPlot for one table (of 3 variables) - Contingency Tables
+#'
+#' @param data1 
+#' @param data2 
+#' @param data3 
+#'
+#' @return
 #' @export
-
-# BarPlot for one table (of 3 variables) - Contingency Tables
+#'
+#' @examples
 XBarPlot3 = function(data1,data2,data3) {
   # library("ggplot2")
   
@@ -12,7 +18,7 @@ XBarPlot3 = function(data1,data2,data3) {
   # data2class = class(data2)
   
   df = data.frame(data1,data2,data3)  
-  ggplot2::ggplot(df, aes(x = data2, fill = data1)) +
+  ggplot(df, aes(x = data2, fill = data1)) +
     ggtitle(maintitle) +
     geom_bar(width = 0.5, colour="red")  +
     facet_wrap(~data3) +

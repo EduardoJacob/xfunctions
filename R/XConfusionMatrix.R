@@ -1,6 +1,11 @@
-
+#' Displays the Confusion Matrix from a table of 2x2
+#'
+#' @param t 
+#'
+#' @return
 #' @export
-
+#'
+#' @examples
 XConfusionMatrix = function(t) {
   print(t)
   TN = t[1,1] # TRUE NEGATIVES
@@ -28,7 +33,7 @@ XConfusionMatrix = function(t) {
   cat("False Negative Error Rate :",FalseNegativeErrorRate,"\n")
   cat("False Positive Error Rate :",FalsePositiveErrorRate,"\n")
    
-}
+} # XConfusionMatrix
 
 
 

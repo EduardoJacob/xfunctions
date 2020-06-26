@@ -1,7 +1,11 @@
-
+#' List chain of Environments, starting on a given Environment
+#'
+#' @param env Receives an environment, defaults for globalenv()
+#'
+#' @return
 #' @export
-
-# List chain of Environments, starting on a given Environment
+#'
+#' @examples
 XListEnvironments = function(env = globalenv()) {
   repeat {
     name <- environmentName(env)
@@ -13,5 +17,7 @@ XListEnvironments = function(env = globalenv()) {
     env <- parent.env(env)
     if (identical(env, emptyenv())) break
   }
+  
+  invisible()
 } # XListEnvironments
 

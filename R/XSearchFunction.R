@@ -1,7 +1,13 @@
-
+#' Search which packages a function belongs to
+#'
+#' Searches in loaded environments
+#'
+#' @param functionName 
+#'
+#' @return
 #' @export
-
-# Search which packages a function belongs to
+#'
+#' @examples
 XSearchFunction = function(functionName) {
   found = F
   
@@ -13,6 +19,7 @@ XSearchFunction = function(functionName) {
   }
   
   if ( !found ) message("Error: Can't find ",functionName)
+  invisible()
 } # XSearchFunction
 
 

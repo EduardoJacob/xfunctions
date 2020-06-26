@@ -1,7 +1,12 @@
-
+#' BarPlot for one table (of 2 variables) - Contingency Tables
+#'
+#' @param data1 
+#' @param data2 
+#'
+#' @return
 #' @export
-
-# BarPlot for one table (of 2 variables) - Contingency Tables
+#'
+#' @examples
 XBarPlot2 = function(data1,data2) {
   # library("ggplot2")
   
@@ -22,7 +27,7 @@ XBarPlot2 = function(data1,data2) {
     cat("\nRelative Frequency of Column:\n")
     print(addmargins(prop.table(t,2)))
   
-    ggplot2::ggplot(data=NULL, aes(x = data2, fill = data1)) +
+    ggplot(data=NULL, aes(x = data2, fill = data1)) +
       ggtitle(maintitle) +
       geom_bar(width = 0.5, colour="red")  +
       xlab(dataname2) +
@@ -32,7 +37,7 @@ XBarPlot2 = function(data1,data2) {
   
   } else {
     
-    ggplot2::ggplot(data=NULL, aes(x = data2, fill = data1)) +
+    ggplot(data=NULL, aes(x = data2, fill = data1)) +
       ggtitle(maintitle) +
       geom_histogram(binwidth = 5, colour="red")  +
       xlab(dataname2) +

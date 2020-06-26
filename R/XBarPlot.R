@@ -1,14 +1,12 @@
-#' @title BarPlot for one categorical variable (A table) 
-#' 
-#' @description 
-#' BarPlot
-#' @param data1 a factor vector
-#' @keywords  
+#' BarPlot for one categorical variable (A table) 
+#'
+#' @param data1 A Numeric Factor
+#'
+#' @return
 #' @export
+#'
 #' @examples
 #' XBarPlot(as.factor(mtcars$cyl))
-
- 
 XBarPlot = function(data1) {
   # library("ggplot2")
   # library("scales")
@@ -24,7 +22,7 @@ XBarPlot = function(data1) {
     labels = paste(t1,t2,sep=" , ")
     print(labels)
     
-    ggplot2::ggplot(data = NULL, aes(x = data1)) +
+    ggplot(data = NULL, aes(x = data1)) +
       ggtitle(maintitle) +
       geom_bar(width = 0.5, colour="red", fill="#AAAAAA" )  +
       xlab(dataname1) +
@@ -33,7 +31,7 @@ XBarPlot = function(data1) {
     
   } else {
     
-    ggplot2::ggplot(data=NULL, aes(x = data1)) +
+    ggplot(data=NULL, aes(x = data1)) +
       ggtitle(maintitle) +
       geom_histogram(binwidth = 5, colour="red", fill="#AAAAAA" )  +
       xlab(dataname1) +
@@ -46,7 +44,7 @@ XBarPlot = function(data1) {
 
 # View(mtcars$cyl)
 # table(mtcars$cyl)
-# XBarPlot(as.factor(mtcars$cyl))
+# 
 
 
 

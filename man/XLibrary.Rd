@@ -7,7 +7,10 @@
 XLibrary(...)
 }
 \arguments{
-\item{package}{0, 1 or more comma separated packages}
+\item{...}{0, 1 or more comma separated packages}
+}
+\value{
+
 }
 \description{
 Receives a list of packages to Install/Load \cr
@@ -25,4 +28,3 @@ XLibrary()
 XLibrary("benchmarkme")
 XLibrary("package1","package2")
 }
-\keyword{XLibrary}

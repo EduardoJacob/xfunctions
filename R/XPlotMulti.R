@@ -1,6 +1,17 @@
-
+#' Plot a List of Functions
+#'
+#' @param myfunctions Receives a Vector of 1 or more Functions
+#' @param x1 plot from
+#' @param x2 plot to
+#'
+#' @return
 #' @export
-
+#'
+#' @examples
+#' f1 = function(x) cos(x)
+#' f2 = function(x) sin(x)
+#' f3 = function(x) x^2
+#' XPlotMulti(c(f1,f2,f3),-pi,pi)
 XPlotMulti = function(myfunctions,x1,x2) {
   addFunction = FALSE
   myColors = rainbow(length(myfunctions))
@@ -19,14 +30,11 @@ XPlotMulti = function(myfunctions,x1,x2) {
   }
   
   legend("topright",legend=myfunctionNames,lty=1,col=myColors)
-}
+} # XPlotMulti
 
-# 
-# f1 = function(x) cos(x)
-# f2 = function(x) sin(x)
-# f3 = function(x) x^2
-# 
-# XPlotMulti(c(f1,f2,f3),-pi,pi)
+
+
+ 
 
 
 

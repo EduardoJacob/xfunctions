@@ -1,8 +1,20 @@
-
+#' Plot Histogram with superimposed best-fitting normal distribution
+#' 
+#' Can Plot histogram of Counts or Histogram of Probabilities
+#' 
+#' @param distribution Vector of values for the histogram 
+#' @param probability Optional, Boolean. If TRUE, plot histogram of Probabilities ( default is False )
+#' @param x1          Optional, A Special point 1 to study ( default is x1=mean-sd )   
+#' @param x2          Optional, A Special point 2 to study ( default is x2=mean+sd)
+#' @param name        Optional, A Name for the Data ( default is the name of the distribution )
+#' @param color       Optional, A Color for the histogram ( defualt is green )
+#'
+#' @return
 #' @export
-
-
-# Plot Histogram with superimposed best-fitting normal distribution
+#'
+#' @examples
+#' XHistogram(iris$Sepal.Length)
+#' XHistogram(iris$Sepal.Length,probability = T,x1=6,x2=7,name="Sepal Lenth",color="yellow")
 XHistogram = function(distribution,probability=FALSE,x1=mean-sd,x2=mean+sd,name="A",color="green") {
   if ( missing(name) ) {
     name = deparse(substitute(distribution))
@@ -99,7 +111,9 @@ XHistogram = function(distribution,probability=FALSE,x1=mean-sd,x2=mean+sd,name=
   A1 = round(sum(distribution > x1 & distribution <= x2),4)
   A2 = round(A1/length(distribution),4)
   print(paste("Area between [",x1,",",x2,"] is proportion:",A2,", absolute:",A1))
-}
+  
+  invisible()
+} # XHistogram
 
 
 

@@ -1,6 +1,5 @@
-#' @title Automatically install/load Packages
+#' Automatically install/load Packages
 #' 
-#' @description 
 #' Receives a list of packages to Install/Load \cr
 #' Adds the received packages to a list of default packages to allways load \cr
 #' Installs missing packages \cr
@@ -10,8 +9,9 @@
 #' Loaded.Packages \cr
 #' Loaded.Datasets \cr
 #' Loaded.Vignettes
-#' @param package 0, 1 or more comma separated packages
-#' @keywords XLibrary
+#' 
+#' @param ... 0, 1 or more comma separated packages
+#' @return
 #' @export
 #' @examples
 #' XLibrary()
