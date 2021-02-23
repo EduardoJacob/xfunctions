@@ -25,7 +25,7 @@ XLibrary = function(...) {
   # cat("Initialy loaded Packages. :",.packages(),"\n")
   # Load passed packages and concatenate default packages
   packages = unlist(list(...),use.names=FALSE)
-  packages = c(packages,"tidyverse","DataExplorer","esquisse","ggplot2","cranlogs","tibble")
+  packages = c(packages,"tidyverse","DataExplorer","ggplot2","cranlogs","tibble") # "esquisse"
   packages = sort(unique(packages))
   
   cat("List of packages to Install/Load:",packages,"\n")

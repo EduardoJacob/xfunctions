@@ -19,7 +19,8 @@ XPlotMulti = function(myfunctions,x1,x2) {
   myfunctionNames = c()
   
   for ( f in myfunctions ) {
-      curve(f, x1, x2, col=myColors[n], xlab="x", ylab="y",add = addFunction )
+      # curve(f, x1, x2, col=myColors[n], xlab="x", ylab="y",add = addFunction, asp=1 )
+      curve(f, xlim = c(x1,x2),ylim=c(x1,x2), col=myColors[n], xlab="x", ylab="y",add = addFunction, asp=1 )
       grid()
       abline(v=0)
       abline(h=0)
@@ -32,6 +33,9 @@ XPlotMulti = function(myfunctions,x1,x2) {
   legend("topright",legend=myfunctionNames,lty=1,col=myColors)
 } # XPlotMulti
 
+# f1 = function(x) 3/4 + 3*x/4
+# f2 = function(x) 7/8 + 3*x/4
+# XPlotMulti(c(f1,f2),-1,1)
 
 
  

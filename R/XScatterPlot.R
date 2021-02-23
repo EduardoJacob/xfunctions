@@ -1,5 +1,13 @@
-
+#' Scatter Plot for 2 continuous variables 
+#'
+#' @param x x data
+#' @param y y data
+#'
+#' @return
 #' @export
+#'
+#' @examples
+#' XScatterPlot(mtcars$wt, mtcars$mpg)
 
 # Scatter diagrams
 # Bivariate data studies the correlation between 2 variables 
@@ -20,7 +28,6 @@
 # For Multiple Linear regression, use: model = lm(y~x1+x2)
 # Slope of best-fit line: b = r . ( SDy / SDx )
 # Intercept of best-fit = Ymean - b. Xmean
-
 
 XScatterPlot = function(x,y) {
 

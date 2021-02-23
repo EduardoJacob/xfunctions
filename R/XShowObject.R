@@ -1,6 +1,11 @@
-
+#' Show Object Detailed Information
+#'
+#' @param v An Object
+#'
+#' @return
 #' @export
-
+#'
+#' @examples
 XShowObject = function(v) {
   cat("Object     :","\n")
   print(v)
