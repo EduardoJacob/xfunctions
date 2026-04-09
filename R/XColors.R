@@ -1,0 +1,18 @@
+#' Return a Vector of n Colors
+#'
+#' @param n 
+#'
+#' @return vector
+#' @export
+#'
+XColors = function(n) {
+  return(colorRampPalette(c("cyan","blue4"))(n))
+}
+
+# c = XColors(4)
+
+
+
+
+
+
