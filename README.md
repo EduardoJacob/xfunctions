@@ -1,8 +1,3 @@
 # xfunctions
 
-This is my personal R Package  
-Contains my utility functions  
-You can try this package with:  
-devtools::install_github("eduardojacob/xfunctions") 
-If you get some dependency error "converted from warning", you can try:
-Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = "true")
+take a look at my youtube playlist to see some of the functions in this package my playlist with R Tutorials: https://www.youtube.com/playlist?list=PLRbCt61PaxX2d0_QXh6Qi6_jAQd66fmcI
