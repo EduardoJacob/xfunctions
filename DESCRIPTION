@@ -2,31 +2,32 @@ Package: xfunctions
 Title: xfunctions package by Eduardo Jacob
 Version: 0.1.4
 Authors@R: 
-    person("Eduardo","Jacob",email = "eduardo.jorge.jacob@hotmail.com",role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+    person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"))
+Description: More about what it does (maybe more than one line) Use four
+    spaces when indenting paragraphs within the Description.
 License: MIT + file LICENSE
+URL: https://github.com/eduardojacob/xfunctions
+Imports:
+    benchmarkme,
+    caret,
+    cvms,
+    epiDisplay,
+    ggplot2,
+    gridExtra,
+    gtools,
+    kableExtra,
+    moments,
+    numDeriv,
+    plotly,
+    RODBC,
+    rootSolve,
+    rstudioapi,
+    scales,
+    sessioninfo,
+    stats,
+    utils
+Suggests: 
+    testthat
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
-Suggests: 
-    testthat
-Imports:
-  benchmarkme,
-  caret,
-  cranlogs,
-  cvms,
-  epiDisplay,
-  gridExtra,
-  gtools,
-  kableExtra,
-  moments,
-  numDeriv,
-  RODBC,
-  rootSolve,
-  rstudioapi,
-  scales,
-  sessioninfo,
-  ggplot2,
-  plotly
-URL: https://github.com/eduardojacob/xfunctions
