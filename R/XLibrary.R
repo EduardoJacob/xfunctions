@@ -51,11 +51,11 @@ XLibrary = function(...) {
   }
   
   # Load Packages
-  packages_version = NULL
+  Version = NULL
   # cat("\n")
   for (package in packages) {
     Info = unlist(utils::packageDescription(package))
-    packages_version = c(packages_version,Info["Version"])
+    Version = c(Version,Info["Version"])
     # cat("Loading package",package,Info["Version"],"\n")
     library(package,character.only = T)
   }
@@ -94,9 +94,9 @@ XLibrary = function(...) {
    
   # Print Packages
   cat("\n")
-  #df = data.frame(Package=packages,Version=packages_version,
+  #df = data.frame(Package=packages,Version=Version,
   #                Downloads.Month=packages_downloads,Datasets=packages_datasets,Vignettes=packages_vignettes)
-  df = data.frame(Package=packages,Version=packages_version,
+  df = data.frame(Package=packages,Version=Version,
                   Datasets=packages_datasets,Vignettes=packages_vignettes)
   print( df, row.names = FALSE) 
   
@@ -104,25 +104,27 @@ XLibrary = function(...) {
   # Create Loaded.Packages on Global Environment
   Package = sort(.packages())
   Version = vector()
-  Title = vector()
+  Description = vector()
   Built = vector()
   New.Version = vector()
   Location = vector()
+  Source = vector()
   # old.packages = as.data.frame(old.packages(repos = "http://cran.us.r-project.org"),stringsAsFactors = F) 
   old.packages = as.data.frame(old.packages(),stringsAsFactors = F) 
   for (package in Package) {
     Info = unlist(packageDescription(package))
     Version = c(Version,Info["Version"])
-    Title = c(Title,Info["Title"])
+    Description = c(Description,Info["Title"])
     Built = c(Built,unlist(strsplit(Info["Built"], ";"))[1])
     Location = c(Location,find.package(package))
+    Source = c(Source,XLibraryGetSource(package))
     ReposVer = ""
     if ( package %in% old.packages$Package ) {
       ReposVer = subset(old.packages,Package==package,select = ReposVer)[1,1]
     }
     New.Version = c(New.Version,ReposVer)
   }
-  Loaded.Packages <<- data.frame(Package,Version,New.Version,Title,Built,Location,stringsAsFactors=F)
+  Loaded.Packages <<- data.frame(Package,Description,Source,Version,New.Version,Built,Location,stringsAsFactors=F)
   
   
   
@@ -175,4 +177,25 @@ XLibrary = function(...) {
   Loaded.Datasets <<- data.frame(Datasets,stringsAsFactors=F)
   
 } # XLibrary
+
+
+XLibraryGetSource = function(package) {
+  desc = packageDescription(package) 
+  
+  if ( isTRUE( desc[["Priority"]] == "base") ) return("Base")
+  if ( isTRUE( desc[["Repository"]] == "CRAN") ) return("CRAN")
+  if ( "RemoteRepos" %in% names(desc) ) return(desc[["RemoteRepos"]])
+  
+  if ( "URL" %in% names(desc) ) {
+    Source = desc[["URL"]]
+    # if Source contains "github" then return "GitHub"
+    if ( grepl("github",Source,ignore.case = T) ) return("GitHub")
+    return(Source)
+  }
+ 
+  return("")
+}
+
+
+
 
