@@ -101,7 +101,7 @@ XLibrary = function(...) {
   print( df, row.names = FALSE) 
   
   
-  # Create Loaded.Packages on Global Environment
+  # Create Loaded.Packages on Global Environment: .packages()
   Package = sort(.packages())
   Version = vector()
   Description = vector()
@@ -127,10 +127,10 @@ XLibrary = function(...) {
     if ( package %in% old.packages$Package ) NewVersion = subset(old.packages,Package==package,select = ReposVer)[1,1]
     
     if ( NewSource == "GitHub" ) {
-      NewRepo = XLibraryGetRepo(Info[["URL"]])
+      NewRepo = paste0(Info[["GithubUsername"]],"/",Info[["GithubRepo"]])
       
       con = url(paste0("https://raw.githubusercontent.com/",NewRepo,"/HEAD/DESCRIPTION"))
-      github_info = read.dcf(con, all = TRUE)
+      github_info = read.dcf(con, all = TRUE) 
       close(con)
       if ( Info[["Version"]] != github_info$Version ) NewVersion = github_info$Version 
     } 
@@ -203,19 +203,6 @@ XLibraryGetSource = function(package) {
   
   return("LOCAL")
 }
-
-XLibraryGetRepo = function(url) {
-  # Remove o domínio e o protocolo, capturando apenas o utilizador/repo
-  repo_id <- sub(".*github\\.com/([A-Za-z0-9_-]+/[A-Za-z0-9_-]+).*", "\\1", url)
-  
-  # Remove eventuais barras finais ou extensões .git
-  repo_id <- sub("\\.git$", "", repo_id)
-  repo_id <- sub("/$", "", repo_id)
-  
-  return(repo_id)
-}
-
-
 
 
 
