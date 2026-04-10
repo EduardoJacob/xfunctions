@@ -51,7 +51,7 @@ XLibrary = function(...) {
   }
   
   # Load Packages
-  Version = NULL
+  Version = vector()
   # cat("\n")
   for (package in packages) {
     Info = unlist(utils::packageDescription(package))
@@ -109,22 +109,37 @@ XLibrary = function(...) {
   New.Version = vector()
   Location = vector()
   Source = vector()
+  Repo = vector()
   # old.packages = as.data.frame(old.packages(repos = "http://cran.us.r-project.org"),stringsAsFactors = F) 
   old.packages = as.data.frame(old.packages(),stringsAsFactors = F) 
   for (package in Package) {
-    Info = unlist(packageDescription(package))
-    Version = c(Version,Info["Version"])
-    Description = c(Description,Info["Title"])
-    Built = c(Built,unlist(strsplit(Info["Built"], ";"))[1])
+    Info = packageDescription(package)
+    
+    Version = c(Version,Info[["Version"]])
+    Description = c(Description,Info[["Title"]])
+    Built = c(Built,unlist(strsplit(Info[["Built"]], ";"))[1])
     Location = c(Location,find.package(package))
-    Source = c(Source,XLibraryGetSource(package))
-    ReposVer = ""
-    if ( package %in% old.packages$Package ) {
-      ReposVer = subset(old.packages,Package==package,select = ReposVer)[1,1]
-    }
-    New.Version = c(New.Version,ReposVer)
+    
+    NewVersion = ""
+    NewSource = XLibraryGetSource(package)
+    NewRepo = "" # GitHub Repo
+    
+    if ( package %in% old.packages$Package ) NewVersion = subset(old.packages,Package==package,select = ReposVer)[1,1]
+    
+    if ( NewSource == "GitHub" ) {
+      NewRepo = XLibraryGetRepo(Info[["URL"]])
+      
+      con = url(paste0("https://raw.githubusercontent.com/",NewRepo,"/HEAD/DESCRIPTION"))
+      github_info = read.dcf(con, all = TRUE)
+      close(con)
+      if ( Info[["Version"]] != github_info$Version ) NewVersion = github_info$Version 
+    } 
+    
+    Source = c(Source,NewSource)
+    New.Version = c(New.Version,NewVersion)
+    Repo = c(Repo,NewRepo)
   }
-  Loaded.Packages <<- data.frame(Package,Description,Source,Version,New.Version,Built,Location,stringsAsFactors=F)
+  Loaded.Packages <<- data.frame(Package,Description,Source,Version,New.Version,Built,Repo,Location,stringsAsFactors=F)
   
   
   
@@ -184,17 +199,27 @@ XLibraryGetSource = function(package) {
   
   if ( isTRUE( desc[["Priority"]] == "base") ) return("Base")
   if ( isTRUE( desc[["Repository"]] == "CRAN") ) return("CRAN")
-  if ( "RemoteRepos" %in% names(desc) ) return(desc[["RemoteRepos"]])
+  if ( isTRUE( desc[["RemoteType"]] == "github") ) return("GitHub")
   
-  if ( "URL" %in% names(desc) ) {
-    Source = desc[["URL"]]
-    # if Source contains "github" then return "GitHub"
-    if ( grepl("github",Source,ignore.case = T) ) return("GitHub")
-    return(Source)
-  }
- 
-  return("")
+  return("LOCAL")
 }
+
+XLibraryGetRepo = function(url) {
+  # Remove o domínio e o protocolo, capturando apenas o utilizador/repo
+  repo_id <- sub(".*github\\.com/([A-Za-z0-9_-]+/[A-Za-z0-9_-]+).*", "\\1", url)
+  
+  # Remove eventuais barras finais ou extensões .git
+  repo_id <- sub("\\.git$", "", repo_id)
+  repo_id <- sub("/$", "", repo_id)
+  
+  return(repo_id)
+}
+
+
+
+
+
+
 
 
 
