@@ -1,6 +1,6 @@
 Package: xfunctions
 Title: xfunctions package by Eduardo Jacob
-Version: 0.1.8
+Version: 1.1.0
 Authors@R: 
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"))
 Description: More about what it does (maybe more than one line) Use four
