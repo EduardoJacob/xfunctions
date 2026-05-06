@@ -1,6 +1,6 @@
 Package: xfunctions
 Title: xfunctions package by Eduardo Jacob
-Version: 1.1.0
+Version: 2026.05.06
 Authors@R: 
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"))
 Description: More about what it does (maybe more than one line) Use four
@@ -16,6 +16,7 @@ Imports:
     gridExtra,
     gtools,
     kableExtra,
+    magrittr,
     moments,
     numDeriv,
     plotly,

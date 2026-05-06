@@ -33,10 +33,13 @@ XShowInfo = function() {
   
   cat("R . . . . . . . . :",R.version.string,"\n")
   
+  # If not interactive, cannot communicate with rstudioapi
   if ( interactive() ) {
     cat("RStudio . . . . . :",as.character(info[["platform"]][["rstudio"]]),"\n")
+    cat("R Project . . . . :",rstudioapi::getActiveProject(),"\n")
   } else {
     cat("RStudio . . . . . : Not Available, when interactive() = FALSE\n")
+    cat("R Project . . . . : Not Available, when interactive() = FALSE\n")
   }
   
   cat("Language. . . . . :",info[["platform"]][["language"]],"\n")
