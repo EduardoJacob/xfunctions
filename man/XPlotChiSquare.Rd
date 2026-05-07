@@ -6,11 +6,6 @@
 \usage{
 XPlotChiSquare(df = 2, ConfidenceLevel = 0.95)
 }
-\arguments{
-\item{df}{}
-
-\item{ConfidenceLevel}{}
-}
 \description{
 The mean on ChiSquare is = Degrees Of Freedom
 SD is sqrt(2*DF)

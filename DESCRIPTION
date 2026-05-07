@@ -1,6 +1,6 @@
 Package: xfunctions
 Title: xfunctions package by Eduardo Jacob
-Version: 2026.05.06
+Version: 2026.05.07
 Authors@R: 
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"))
 Description: More about what it does (maybe more than one line) Use four
@@ -31,4 +31,4 @@ Suggests:
     testthat
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.0.0

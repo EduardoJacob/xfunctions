@@ -3,3 +3,5 @@
 ^dev$
 ^\.positai$
 ^\.claude$
+^README\.Rmd$
+^SETUP\.R$

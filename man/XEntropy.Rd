@@ -6,9 +6,6 @@
 \usage{
 XEntropy(v)
 }
-\arguments{
-\item{v}{}
-}
 \value{
 numeric
 }

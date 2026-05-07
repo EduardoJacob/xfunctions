@@ -6,9 +6,6 @@
 \usage{
 XColors(n)
 }
-\arguments{
-\item{n}{}
-}
 \value{
 vector
 }

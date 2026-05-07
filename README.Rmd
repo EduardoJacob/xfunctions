@@ -1,0 +1,84 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# xfunctions <img src="man/figures/logo.png" align="right" height="138" alt="xfunctions package" />
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This R Package contains a collection of functions
+
+take a look at my youtube playlist with R Tutorials: 
+
+---
+
+https://www.youtube.com/playlist?list=PLRbCt61PaxX2d0_QXh6Qi6_jAQd66fmcI
+
+---
+
+## Installation
+
+You can install the development version of xfunctions from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("EduardoJacob/xfunctions")
+```
+
+### Key Functions by Category
+
+**Statistical Tests:**
+- `XStatsOneSampleTtest()` - One sample t-test for population mean inference
+- `XStatsTwoSampleTtest()` - Two sample t-test
+- `XStatsZtest()` - Z-test for population mean
+- `XStatsChiSquareGOF()` - Chi-square goodness-of-fit test
+- `XStatsChiSquareHomogeneity()` - Chi-square homogeneity test
+- `XTtest()` - Paired t-test
+- `XTwoSampleTtest()` - Two-sample t-test
+- `XStatsCIproportion()` / `XStatsCIproportion2()` - Proportion confidence intervals
+
+**Data Visualization:**
+- `XHistogram()` - Histogram with superimposed normal distribution, density plot, boxplot stats
+- `XHistogramDiscrete()` - Histogram for integer vectors with centered bars
+- `XBarPlot()`, `XBarPlot2()`, `XBarPlot3()` - Bar plots (1-3 variables) with ggplot2
+- `XScatterPlot()`, `XScatterPlot2()` - Scatter plots with correlation analysis and regression lines
+- `XPlotBinomial()`, `XPlotGeometric()`, `XPlotPoisson()`, `XPlotNegativeBinomial()`, `XPlotChiSquare()`, `XPlotOjive()` - Distribution plots using plotly
+- `XPlotMulti()` - Multiple functions on single graph with automatic legend
+- `XThresholdPlot()` - Threshold visualization
+
+**Statistical Summaries:**
+- `XSummary()` - Enhanced summary with arithmetic/geometric/harmonic means, quartiles, outliers, skewness, kurtosis
+- `XMode()` - Statistical mode (unimodal/multimodal)
+- `XEntropy()` - Entropy computation for vectors
+- `XDescribeRandomVariable()` - Expected value, variance, standard deviation for discrete random variables
+
+**Classification/Machine Learning:**
+- `XConfusionMatrix()` - Classification evaluation with accuracy, sensitivity, specificity, F1-score, visual confusion matrix
+
+**Data Utilities:**
+- `XLibrary()` - Automated package manager (installs missing packages, loads them, creates summary dataframes)
+- `XExecSQL()` - Execute SQL queries via ODBC connection
+- `XFillMissingNumbers()` - Data imputation using linear regression
+- `XSplit()` - Split data/strings
+- `XListEnvironments()` - List R environment chain
+- `XShowInfo()`, `XShowObject()` - Display package/info summaries
+
+**Mathematical Functions:**
+- `XElectricForce()` - Electric force calculation using Coulomb's Law
+- `XPowerSet()` - Generate power set of a set (all subsets)
+- `XStringPermutations()` - String permutations
+- `XRandomVariableContinuous()`, `XRandomVariableDiscrete()` - Random variable analysis
+- `XJointCategorical()` / `XJointNumerical()` - Joint distribution analysis with covariance/correlation
+- `XIsNormalyDistributed()` - Normality check using density plots, Q-Q plots

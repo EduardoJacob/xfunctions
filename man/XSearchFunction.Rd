@@ -6,9 +6,6 @@
 \usage{
 XSearchFunction(functionName)
 }
-\arguments{
-\item{functionName}{}
-}
 \description{
 Searches in loaded environments
 }

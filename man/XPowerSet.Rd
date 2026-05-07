@@ -6,9 +6,6 @@
 \usage{
 XPowerSet(v)
 }
-\arguments{
-\item{v}{}
-}
 \description{
 The Power Set is the set of all subsets of S, 
 including the empty set and S itself
