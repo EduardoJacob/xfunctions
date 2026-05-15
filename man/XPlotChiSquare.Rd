@@ -6,6 +6,11 @@
 \usage{
 XPlotChiSquare(df = 2, ConfidenceLevel = 0.95)
 }
+\arguments{
+\item{df}{input degrees of freedom}
+
+\item{ConfidenceLevel}{confidence level for critical value (default 0.95)}
+}
 \description{
 The mean on ChiSquare is = Degrees Of Freedom
 SD is sqrt(2*DF)

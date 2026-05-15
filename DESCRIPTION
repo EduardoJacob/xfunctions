@@ -1,6 +1,6 @@
 Package: xfunctions
 Title: xfunctions package by Eduardo Jacob
-Version: 2026.05.07
+Version: 2026.05.16
 Authors@R: 
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"))
 Description: More about what it does (maybe more than one line) Use four
@@ -8,7 +8,6 @@ Description: More about what it does (maybe more than one line) Use four
 License: MIT + file LICENSE
 URL: https://github.com/eduardojacob/xfunctions
 Imports:
-    benchmarkme,
     caret,
     cvms,
     epiDisplay,
@@ -22,9 +21,7 @@ Imports:
     plotly,
     RODBC,
     rootSolve,
-    rstudioapi,
     scales,
-    sessioninfo,
     stats,
     utils
 Suggests: 
@@ -32,3 +29,5 @@ Suggests:
 Encoding: UTF-8
 LazyData: true
 Config/roxygen2/version: 8.0.0
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0

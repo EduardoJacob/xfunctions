@@ -1,7 +1,7 @@
 #' Displays the Confusion Matrix from 2 vectors: predictions vs targets
 #'
-#' @param predictions 
-#' @param targets 
+#' @param predictions vector of predictions
+#' @param targets vector of targets
 #'
 #' @export
 #'

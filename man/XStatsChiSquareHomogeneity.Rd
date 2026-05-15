@@ -13,15 +13,15 @@ XStatsChiSquareHomogeneity(observed)
 Chi-Square Test for Homogeneity samples from 2 different groups
 Chi-Square Test for Association samples from 1 group comparing 2 variables
 
-The "test of homogeneity" is a way of determining whether two or more sub-groups of a population 
-share the same distribution of a single categorical variable. 
-For example, do people of different races have the same proportion of smokers to non-smokers, 
-or do different education levels have different proportions of Democrats, Republicans, 
-and Independent. 
-The test of homogeneity expands on the two-proportion z-test. 
-The two proportion z-test is used when the response variable has only two categories as outcomes 
-and we are comparing two groups. 
-The homogeneity test is used if the response variable has several outcome categories, 
+The "test of homogeneity" is a way of determining whether two or more sub-groups of a population
+share the same distribution of a single categorical variable.
+For example, do people of different races have the same proportion of smokers to non-smokers,
+or do different education levels have different proportions of Democrats, Republicans,
+and Independent.
+The test of homogeneity expands on the two-proportion z-test.
+The two proportion z-test is used when the response variable has only two categories as outcomes
+and we are comparing two groups.
+The homogeneity test is used if the response variable has several outcome categories,
 and we wish to compare two or more groups.
 }
 \examples{

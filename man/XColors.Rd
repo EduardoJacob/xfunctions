@@ -6,6 +6,9 @@
 \usage{
 XColors(n)
 }
+\arguments{
+\item{n}{number of colors}
+}
 \value{
 vector
 }

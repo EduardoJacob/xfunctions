@@ -2,7 +2,7 @@
 #'
 #' Searches in loaded environments
 #'
-#' @param functionName 
+#' @param functionName name of the function to search for 
 #'
 #' @export
 #'

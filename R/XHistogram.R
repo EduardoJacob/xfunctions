@@ -76,14 +76,14 @@ XHistogram = function(distribution,probability=FALSE,x1=mean-sd,x2=mean+sd,name=
   
   # Superimpose the density plot
   # lines() or points() will add to the existing graph, but will not create a new window.
-  d = density(distribution,na.rm = T)
-  lines(d$x,multiplier*d$y,col="blue",lwd=2)
+  d = stats::density(distribution,na.rm = T)
+  graphics::lines(d$x,multiplier*d$y,col="blue",lwd=2)
   
   
   # Superimpose points
   xv = sapply(-3:3,function(x) mean + x*sd)
   yv = sapply(xv,function(x) multiplier * dnorm(x,mean,sd))
-  points(xv,yv,pch=19, col="red")
+  graphics::points(xv,yv,pch=19, col="red")
   
   print("Aproximation values from the normal curve:")
   for (x in c(x1,x2)) {
@@ -115,5 +115,5 @@ XHistogram = function(distribution,probability=FALSE,x1=mean-sd,x2=mean+sd,name=
   invisible()
 } # XHistogram
 
-
+# codetools::checkUsage(XHistogram, all = TRUE)
 

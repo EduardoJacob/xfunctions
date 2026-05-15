@@ -1,6 +1,10 @@
-
+#' Execute SQL query and return data frame
+#'
+#' @param subsys subsystem
+#' @param sql query
+#'
 #' @export
-
+#' 
 XExecSQL = function(subsys,query) {
   # library("RODBC")
   

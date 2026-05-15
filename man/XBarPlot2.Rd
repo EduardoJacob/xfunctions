@@ -6,6 +6,11 @@
 \usage{
 XBarPlot2(data1, data2)
 }
+\arguments{
+\item{data1}{variable 1}
+
+\item{data2}{variable 2}
+}
 \description{
 BarPlot for one table (of 2 variables) - Contingency Tables
 }

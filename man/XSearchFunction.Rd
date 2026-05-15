@@ -6,6 +6,9 @@
 \usage{
 XSearchFunction(functionName)
 }
+\arguments{
+\item{functionName}{name of the function to search for}
+}
 \description{
 Searches in loaded environments
 }

@@ -12,13 +12,13 @@ XStatsChiSquareGOF(observed, expected)
 \item{expected}{Expected Vector (optional defaults to equally probable)}
 }
 \description{
-The "goodness-of-fit test" is a way of determining whether a set of categorical data came from 
-a claimed discrete distribution or not. 
-The null hypothesis is that they did and the alternate hypothesis is that they didn't. 
-It answers the question: 
-are the frequencies I observe for my categorical variable consistent with my theory? 
-The goodness-of-fit test expands the one-proportion z-test. 
-The one-proportion z-test is used if the outcome has only two categories. 
+The "goodness-of-fit test" is a way of determining whether a set of categorical data came from
+a claimed discrete distribution or not.
+The null hypothesis is that they did and the alternate hypothesis is that they didn't.
+It answers the question:
+are the frequencies I observe for my categorical variable consistent with my theory?
+The goodness-of-fit test expands the one-proportion z-test.
+The one-proportion z-test is used if the outcome has only two categories.
 The goodness-of-fit test is used if you have two or more categories.
 }
 \examples{

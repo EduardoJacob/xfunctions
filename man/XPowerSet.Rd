@@ -6,8 +6,11 @@
 \usage{
 XPowerSet(v)
 }
+\arguments{
+\item{v}{input vector}
+}
 \description{
-The Power Set is the set of all subsets of S, 
+The Power Set is the set of all subsets of S,
 including the empty set and S itself
 Cardinality of the Power Set must be 2^n with n = number of elements in the set
 Remember that matematically, a Set cannot have repeated elements,

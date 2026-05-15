@@ -1,6 +1,6 @@
 #' Plots The Poisson Distribution Poisson(lambda)
 #'
-#' @param L Number of events per unit time
+#' @param lambda Number of events per unit time
 #'
 #' @export
 #'

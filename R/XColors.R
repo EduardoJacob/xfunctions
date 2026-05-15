@@ -1,6 +1,6 @@
 #' Return a Vector of n Colors
 #'
-#' @param n 
+#' @param n number of colors
 #'
 #' @return vector
 #' @export

@@ -1,8 +1,8 @@
 #' BarPlot for one table (of 3 variables) - Contingency Tables
 #'
-#' @param data1 
-#' @param data2 
-#' @param data3 
+#' @param data1 variable 1
+#' @param data2 variable 2
+#' @param data3 variable 3
 #'
 #' @export
 #'

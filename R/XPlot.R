@@ -1,6 +1,6 @@
 #' Plots a function
 #'
-#' @param f 
+#' @param f input function
 #' @param x1 from x1
 #' @param x2 to x2
 #' @param x0 Optional, studies the point x0, defaults to x0=(x1+x2)/2

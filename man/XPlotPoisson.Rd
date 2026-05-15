@@ -7,7 +7,7 @@
 XPlotPoisson(lambda)
 }
 \arguments{
-\item{L}{Number of events per unit time}
+\item{lambda}{Number of events per unit time}
 }
 \description{
 Plots The Poisson Distribution Poisson(lambda)

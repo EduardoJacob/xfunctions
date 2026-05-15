@@ -20,11 +20,11 @@ XStatsCIproportion2(n1, p1, n2, p2, CL = 0.95, SL = 0.05)
 \item{SL}{Significance Level for the Hypothesis test for difference in proportions ( default=0.05 )}
 }
 \description{
-Inferences on one proportion are: 
-\cr Confidence Intervals 
-\cr Significance Tests  
+Inferences on one proportion are:
+\cr Confidence Intervals
+\cr Significance Tests
 \cr
-\cr Criteria for both, are:  
+\cr Criteria for both, are:
 \cr Randomness
 \cr Normality
 \cr Independence

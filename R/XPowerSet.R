@@ -6,7 +6,7 @@
 #' Remember that matematically, a Set cannot have repeated elements,
 #' So this function will apply a unique() to the input vector
 #'
-#' @param v 
+#' @param v input vector 
 #'
 #' @export
 #'

@@ -18,11 +18,11 @@ XStatsCIproportion(n, p, CL = 0.95, N = 1e+06, t)
 \item{t}{Proportion to evaluate ( Significance Test )}
 }
 \description{
-Inferences on one proportion are: 
-\cr Confidence Intervals 
-\cr Significance Tests  
+Inferences on one proportion are:
+\cr Confidence Intervals
+\cr Significance Tests
 \cr
-\cr Criteria for both, are:  
+\cr Criteria for both, are:
 \cr Randomness
 \cr Normality
 \cr Independence

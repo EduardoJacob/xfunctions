@@ -3,8 +3,8 @@
 #' The mean on ChiSquare is = Degrees Of Freedom
 #' SD is sqrt(2*DF)
 #'
-#' @param df 
-#' @param ConfidenceLevel 
+#' @param df input degrees of freedom
+#' @param ConfidenceLevel confidence level for critical value (default 0.95) 
 #'
 #' @export
 #'

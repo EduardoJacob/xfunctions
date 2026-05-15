@@ -3,7 +3,7 @@
 \name{XJointNumerical}
 \alias{XJointNumerical}
 \title{Joint Distribution between 2 Numerical Random Variables X,Y with probability table p
-Also Analyse the Portfolio Combination of a*X + b*Y}
+Also Analyse the Portfolio Combination of a\emph{X + b}Y}
 \usage{
 XJointNumerical(X, Y, p, a = 1, b = 1)
 }
@@ -14,11 +14,11 @@ XJointNumerical(X, Y, p, a = 1, b = 1)
 
 \item{p}{Totals Table or Probability Table}
 
-\item{a}{Portfolio Combination of a*X + b*Y}
+\item{a}{Portfolio Combination of a\emph{X + b}Y}
 
-\item{b}{Portfolio Combination of a*X + b*Y}
+\item{b}{Portfolio Combination of a\emph{X + b}Y}
 }
 \description{
 Joint Distribution between 2 Numerical Random Variables X,Y with probability table p
-Also Analyse the Portfolio Combination of a*X + b*Y
+Also Analyse the Portfolio Combination of a\emph{X + b}Y
 }

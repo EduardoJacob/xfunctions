@@ -20,12 +20,12 @@ XStatsOneSampleTtest(n, m, S, CL = 0.95, N = 1e+06, t)
 \item{t}{Mean to evaluate ( for Significance Tests )}
 }
 \description{
-Inferences for One Sample T test ( or for a Paired T test ) are:: 
-\cr Confidence Intervals 
-\cr Significance Tests 
+Inferences for One Sample T test ( or for a Paired T test ) are::
+\cr Confidence Intervals
+\cr Significance Tests
 \cr
-\cr Criteria for One Sample T test, ( Conditions for inference on a mean ) are:  
+\cr Criteria for One Sample T test, ( Conditions for inference on a mean ) are:
 \cr Randomness - A random sample or randomized experiment should be used to obtain the data.
 \cr Normality - Sample size must be at least 30, unless population distribution is normal
-\cr Independence - Sampling size n less then 10% of the Population size
+\cr Independence - Sampling size n less then 10\% of the Population size
 }

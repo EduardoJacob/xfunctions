@@ -5,3 +5,6 @@
 ^\.claude$
 ^README\.Rmd$
 ^SETUP\.R$
+^StartLMstudio\.ps1$
+^Claude\.md$
+^LICENSE\.md$

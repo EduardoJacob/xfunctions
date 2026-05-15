@@ -6,6 +6,9 @@
 \usage{
 XEntropy(v)
 }
+\arguments{
+\item{v}{input vector}
+}
 \value{
 numeric
 }

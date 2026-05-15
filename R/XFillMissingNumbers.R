@@ -1,6 +1,10 @@
-
+#' Fill missing Numbers
+#'
+#' @param df input dataframe
+#' @param formula formula to predict missing values
+#'
 #' @export
-
+#' 
 XFillMissingNumbers = function(df,formula) {
   #df = titanic.full
   #formula = "Age~Pclass+Sex+SibSp+Parch"

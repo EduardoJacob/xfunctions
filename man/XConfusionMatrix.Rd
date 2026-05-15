@@ -6,6 +6,11 @@
 \usage{
 XConfusionMatrix(predictions, targets)
 }
+\arguments{
+\item{predictions}{vector of predictions}
+
+\item{targets}{vector of targets}
+}
 \description{
 Displays the Confusion Matrix from 2 vectors: predictions vs targets
 }

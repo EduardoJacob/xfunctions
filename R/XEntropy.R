@@ -5,7 +5,7 @@
 #' to guess which one object was picked
 #' Entropy is Information 
 #'
-#' @param v 
+#' @param v input vector
 #'
 #' @return numeric
 #' @export

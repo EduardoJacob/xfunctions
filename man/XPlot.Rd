@@ -7,6 +7,8 @@
 XPlot(f, x1, x2, x0 = (x1 + x2)/2)
 }
 \arguments{
+\item{f}{input function}
+
 \item{x1}{from x1}
 
 \item{x2}{to x2}

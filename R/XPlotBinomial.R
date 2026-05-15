@@ -31,13 +31,13 @@ XPlotBinomial = function(n,p) {
   message(title)
   t = list(family = "sans serif",size = 10, color = 'blue')
   
-  fig = fig %>% layout(title = title, font = t)
+  fig = fig %>% plotly::layout(title = title, font = t)
   x = seq(n1,n2,length.out = 100)
-  fig = fig %>% add_lines(x = x, y = dnorm(x,mean=mean,sd=sd), name = "Normal")
+  fig = fig %>% plotly::add_lines(x = x, y = dnorm(x,mean=mean,sd=sd), name = "Normal")
   fig
 }
 
-
+# codetools::checkUsage(XPlotBinomial, all = TRUE) 
 
 
 
