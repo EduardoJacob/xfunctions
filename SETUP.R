@@ -6,6 +6,7 @@ if (file.exists(".Rbuildignore")) {
   usethis::use_build_ignore("StartLMstudio.ps1")
   usethis::use_build_ignore("Claude.md")
   usethis::use_build_ignore("LICENSE.md")
+  usethis::use_build_ignore("images")
   
 }
 
