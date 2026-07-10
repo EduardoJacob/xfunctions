@@ -31,7 +31,8 @@ XLibrary = function(...) {
   
   cat("List of packages to Install/Load:",packages,"\n")
   
-  installed.packages = as.data.frame(installed.packages(),stringsAsFactors = F)
+  installed.packages = as.data.frame(utils::installed.packages(),stringsAsFactors = F)
+  installed.versions = installed.packages$Version
   installed.packages = installed.packages$Package
   cat("There are:",length(installed.packages),"packages installed \n")
   
@@ -49,6 +50,10 @@ XLibrary = function(...) {
       install.packages(package,dependencies = T)
     }
   }
+  
+  installed.packages = as.data.frame(utils::installed.packages(),stringsAsFactors = F)
+  installed.versions = installed.packages$Version
+  installed.packages = installed.packages$Package
   
   # Load Packages
   Version = vector()
@@ -84,6 +89,8 @@ XLibrary = function(...) {
     packages_datasets = c(packages_datasets,nrow(d))
   }
   Loaded.Vignettes <<- as.data.frame(vignette(package=packages)$results)
+  
+  
   # Get number of Vignettes per Package
   packages_vignettes = NULL
   for (package in packages) {
@@ -110,8 +117,9 @@ XLibrary = function(...) {
   Location = vector()
   Source = vector()
   Repo = vector()
-  # old.packages = as.data.frame(utils::old.packages(repos = "http://cran.us.r-project.org"),stringsAsFactors = F) 
-  old.packages = as.data.frame(old.packages(ignore_repo_cache = TRUE),stringsAsFactors = F) 
+  
+  available.packages = utils::available.packages()
+  
   for (package in Package) {
     # message("Inspecting package: ",package)
     Info = utils::packageDescription(package)
@@ -120,12 +128,12 @@ XLibrary = function(...) {
     Description = c(Description,Info[["Title"]])
     Built = c(Built,unlist(strsplit(Info[["Built"]], ";"))[1])
     Location = c(Location,find.package(package))
+    NewVersion = "" 
+    if ( package %in% rownames(available.packages) ) NewVersion = available.packages[package,"Version"]
+    if ( Info[["Version"]] == NewVersion ) NewVersion = ""
     
-    NewVersion = ""
     NewSource = XLibraryGetSource(package)
     if ( is.null(Info[["Repository"]]) ) NewRepo = "" else NewRepo = Info[["Repository"]]
-    
-    if ( package %in% old.packages$Package ) NewVersion = subset(old.packages,Package==package,select = ReposVer)[1,1]
     
     if ( NewSource == "GitHub" ) {
       NewRepo = ""
@@ -209,6 +217,8 @@ XLibraryGetSource = function(package) {
   
   return("LOCAL")
 }
+
+
 
 
 
